@@ -1,0 +1,150 @@
+<div class="container">
+    <span>
+        <h2>Lista alumnos</h2>
+    </span>
+</div>
+
+
+
+
+<div class="container">
+    <div>
+        <button type="button" mat-button (click)="nuevaFila()">
+            <mat-icon>person_add</mat-icon>
+            <span>Nuevo Alumno</span>
+        </button>
+    </div>
+    <div *ngIf="agregarFila">
+        <table>
+            <ng-container matColumnDef="inputs">
+                <td mat-cell colspan="5">
+                    <form [formGroup]="formFG">
+                    <input type="text" placeholder="Matrícula" formControlName="matricula"> 
+                    <input type="text" placeholder="Nombre" formControlName="nombre">
+                    <input type="text" placeholder="Apellido Paterno" formControlName="apaterno">
+                    <input type="text" placeholder="Apellido Materno" formControlName="amaterno" >
+                    <ng-container>
+                        <button class="me-2 m-0 p-0 shadow-0 btn btn-lg text-dark" (click)="agregarAlumno()">
+                            <mat-icon>done</mat-icon>
+                        </button>
+                        <button id="cancelButtonRateAdult" class="m-0 p-0 shadow-0 btn btn-lg text-dark" (click)="cancelarFila()">
+                            <mat-icon>clear</mat-icon>
+                        </button>
+                    </ng-container>
+                </form>
+                </td>
+            </ng-container>
+    
+            <!-- Encabezado de la fila de inputs -->
+            <tr mat-row *matRowDef="let row; columns: ['inputs']"></tr>
+        </table>
+    </div>
+
+
+
+    <div>
+        <table mat-table [dataSource]="alumnosLista">
+            <ng-container matColumnDef="matricula">
+                <th mat-header-cell *matHeaderCellDef>
+                    <span>Matrícula </span>
+                    <input type="text" id="search-input-matricula" (keyup)="search($event, 'matricula')" />
+                </th>
+                <td mat-cell *matCellDef="let alumno; let i = index">{{ alumno.matricula }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>
+                    <span>Nombre </span>
+                    <input type="text" id="search-input-nombre" (keyup)="search($event, 'nombre')" />
+                </th>
+                <td mat-cell *matCellDef="let alumno; let i = index">
+                    <form [formGroup]="formEditFG">
+                        <ng-container *ngIf="editElementIndex !== i">
+                            {{ alumno.nombre }}
+                        </ng-container>
+                        <ng-container *ngIf="editElementIndex === i">
+                            <input type="text" id="input-nombre" formControlName="nombre" />
+                        </ng-container>
+                    </form>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="apellidoPaterno">
+                <th mat-header-cell *matHeaderCellDef>
+                    <span>Apellido Paterno </span>
+                    <input type="text" id="search-input-apaterno" (keyup)="search($event, 'apaterno')" />
+                </th>
+                <td mat-cell *matCellDef="let alumno; let i = index">
+                    <form [formGroup]="formEditFG">
+                        <ng-container *ngIf="editElementIndex !== i">
+                            {{ alumno.apellido_paterno }}
+                        </ng-container>
+                        <ng-container *ngIf="editElementIndex === i">
+                            <input type="text" id="input-apaterno" formControlName="apaterno" />
+                        </ng-container>
+                    </form>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="apellidoMaterno">
+                <th mat-header-cell *matHeaderCellDef>
+                    <span>Apellido Materno </span>
+                    <input type="text" id="search-input-amaterno" (keyup)="search($event, 'amaterno')" />
+                </th>
+                <td mat-cell *matCellDef="let alumno; let i = index">
+                    <form [formGroup]="formEditFG">
+                        <ng-container *ngIf="editElementIndex !== i">
+                            {{ alumno.apellido_materno }}
+                        </ng-container>
+                        <ng-container *ngIf="editElementIndex === i">
+                            <input type="text" id="input-amaterno" formControlName="amaterno" />
+                        </ng-container>
+                    </form>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                <td mat-cell *matCellDef="let alumno; let i = index">
+                    <ng-container *ngIf="editElementIndex === -1 || editElementIndex !== i">
+                        <button class="me-2 m-0 p-0 shadow-0 btn btn-lg text-dark"
+                            (click)="editElementIndexs(alumno, i)">
+                            <mat-icon>create</mat-icon>
+                        </button>
+                    </ng-container>
+                    <ng-container *ngIf="editElementIndex === -1 || editElementIndex !== i">
+                        <button class="m-0 p-0 shadow-0 btn btn-lg text-dark" (click)="eliminarAlumno(alumno.id)"
+                            [disabled]="editElementIndex !== -1 && editElementIndex !== i">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </ng-container>
+
+                    <ng-container *ngIf="editElementIndex === i">
+                        <button class="me-2 m-0 p-0 shadow-0 btn btn-lg text-dark" (click)="save(alumno, i)">
+                            <mat-icon>done</mat-icon>
+                        </button>
+                        <button id="cancelButtonRateAdult" class="m-0 p-0 shadow-0 btn btn-lg text-dark"
+                            (click)="cancel()">
+                            <mat-icon>clear</mat-icon>
+                        </button>
+                    </ng-container>
+                </td>
+            </ng-container>
+
+
+
+            <!-- Encabezados de las columnas -->
+            <tr mat-header-row
+                *matHeaderRowDef="['matricula', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'acciones']">
+            </tr>
+
+            <!-- Filas de datos -->
+            <tr mat-row
+                *matRowDef="let alumno; columns: ['matricula', 'nombre', 'apellidoPaterno', 'apellidoMaterno', 'acciones']">
+            </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+</div>

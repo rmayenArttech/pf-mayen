@@ -1,0 +1,5 @@
+
+<ng-container *ngIf="sesion$ | async as sesion">
+  <app-nav-bar *ngIf="sesion.sesionActiva"></app-nav-bar>
+</ng-container>
+<router-outlet></router-outlet>

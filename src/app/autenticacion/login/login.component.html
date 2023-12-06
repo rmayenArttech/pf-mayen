@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <form [formGroup]="formulario" class="form-signin" (ngSubmit)="login()">
+
+        <h2 class="form-signin-heading">Please login</h2>
+        <input type="text" class="form-control" name="username" formControlName="usuario" placeholder="Usuario"
+            required="" autofocus="" />
+        <input type="password" class="form-control" name="password" formControlName="contrasena"
+            placeholder="Contraseña" required="" />
+        <label class="checkbox">
+            <input type="checkbox" value="esAdmin" id="esAdmin" formControlName="esAdmin" name="esAdmin">Admin
+        </label>
+        
+        <div class="col-md-2">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,200 @@
+{
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "Alumno",
+      "apellido_paterno": "Prueba",
+      "apellido_materno": "Coder house",
+      "matricula": "010101",
+      "cursos": [
+        {
+          "claveCurso": "FPX01"
+        },
+        {
+          "claveCurso": "DWR01"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Alumno",
+      "apellido_paterno": "Prueba 02",
+      "apellido_materno": "Coder",
+      "matricula": "020202",
+      "cursos": [
+        {
+          "claveCurso": "FPX01"
+        },
+        {
+          "claveCurso": "DWR01"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Alumno",
+      "apellido_paterno": "Prueba 03",
+      "apellido_materno": "Coder",
+      "matricula": "030303",
+      "cursos": [
+        {
+          "claveCurso": "FPX01"
+        },
+        {
+          "claveCurso": "DWR01"
+        }
+      ]
+    },
+    {
+      "nombre": "Juan",
+      "apellido_paterno": "Perez",
+      "apellido_materno": "Perez",
+      "matricula": "040404",
+      "cursos": [
+        ""
+      ],
+      "id": 4
+    },
+    {
+      "nombre": "Evelin",
+      "apellido_paterno": "Dominguez",
+      "apellido_materno": "Dominguez",
+      "matricula": "050505",
+      "cursos": [
+        ""
+      ],
+      "id": 5
+    }
+  ],
+  "cursos": [
+    {
+      "id": 1,
+      "clave": "FPX01",
+      "nombre": "Fundamentos de Programación",
+      "descripcion": "Aprende los conceptos esenciales de la programación y cómo aplicarlos en proyectos web.",
+      "instructor": "Juan Pérez",
+      "duracion": "8 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Diseño Web Responsivo",
+      "clave": "DWR01",
+      "descripcion": "Explora técnicas y herramientas para crear diseños web que se adapten a diferentes dispositivos y tamaños de pantalla.",
+      "instructor": "María Gómez",
+      "duracion": "6 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 3,
+      "clave": "DFR01",
+      "nombre": "Desarrollo Frontend con React",
+      "descripcion": "Domina el framework React para construir interfaces de usuario interactivas y dinámicas.",
+      "instructor": "Carlos Rodríguez",
+      "duracion": "10 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 4,
+      "nombre": "Desarrollo Backend con Node.js",
+      "clave": "DBN01",
+      "descripcion": "Aprende a construir aplicaciones y servicios en el lado del servidor utilizando Node.js y Express.",
+      "instructor": "Ana Martínez",
+      "duracion": "12 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 5,
+      "clave": "BDW01",
+      "nombre": "Bases de Datos para Web",
+      "descripcion": "Explora diferentes tipos de bases de datos y cómo integrarlas en proyectos web.",
+      "instructor": "Luis Sánchez",
+      "duracion": "8 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 6,
+      "clave": "SAW01",
+      "nombre": "Seguridad en Aplicaciones Web",
+      "descripcion": "Aprende a identificar y mitigar vulnerabilidades comunes en aplicaciones web.",
+      "instructor": "Elena Vargas",
+      "duracion": "6 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 7,
+      "clave": "DHX01",
+      "nombre": "Despliegue y Hosting",
+      "descripcion": "Descubre cómo desplegar y alojar aplicaciones web en servidores y servicios en la nube.",
+      "instructor": "Miguel López",
+      "duracion": "4 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 8,
+      "clave": "ORW01",
+      "nombre": "Optimización y Rendimiento Web",
+      "descripcion": "Aprende técnicas para mejorar la velocidad y el rendimiento de tus aplicaciones web.",
+      "instructor": "Paula Ruiz",
+      "duracion": "6 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 9,
+      "clave": "IAS01",
+      "nombre": "Integración de APIs y Servicios",
+      "descripcion": "Explora cómo integrar APIs externas y servicios de terceros en tus aplicaciones web.",
+      "instructor": "David Flores",
+      "duracion": "4 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 10,
+      "clave": "POO01",
+      "nombre": "Programacion Orientada a Objetos",
+      "descripcion": "",
+      "instructor": "Andrea González",
+      "duracion": "10 semanas",
+      "disponible": true,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "nombre": "Nuevo Curso",
+      "descripcion": "Descripción del nuevo curso",
+      "instructor": "Nuevo Instructor",
+      "duracion": "6 semanas",
+      "disponible": true,
+      "id": 11,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "nombre": "Prueba Curso II",
+      "descripcion": "Curso nuevo desde aplicacion",
+      "instructor": "Instructor Prueba",
+      "duracion": "3",
+      "disponible": true,
+      "clave": "PCX01",
+      "id": 12,
+      "imagenUrl": "assets/images/curso.png"
+    },
+    {
+      "id": 13,
+      "nombre": "prueba curso",
+      "descripcion": "prueba curso 03",
+      "instructor": "instructor prueba",
+      "duracion": "3",
+      "disponible": true,
+      "clave": "PCX03",
+      "imagenUrl": "assets/images/curso.png"
+    }
+  ]
+}
